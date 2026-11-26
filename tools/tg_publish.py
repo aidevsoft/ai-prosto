@@ -56,7 +56,8 @@ def call(token, method, fields, photo: Path | None = None):
 
 def main() -> int:
     dry = '--dry' in sys.argv
-    token, chat = os.environ.get('TG_BOT_TOKEN'), os.environ.get('TG_CHAT', '@about_ai_easy')
+    token = os.environ.get('TG_BOT_TOKEN') or os.environ.get('TG_AIPROSTO_BOT_TOKEN')
+    chat = os.environ.get('TG_CHAT', '@about_ai_easy')
     if not token and not dry:
         print('::warning::TG_BOT_TOKEN не задан — публикация выключена')
         return 0
@@ -66,6 +67,8 @@ def main() -> int:
         if path.name in state:
             continue
         meta, body = parse(path)
+        if meta.get('skip') == 'true':
+            continue
         if meta['at'] > now:
             continue
         late = (now - meta['at']).total_seconds() / 3600
