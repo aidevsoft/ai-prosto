@@ -2,8 +2,8 @@
 
 Публичная часть проекта @ai.prosto.official.
 
-- `site/` — сайт на GitHub Pages: бесплатная шпаргалка, библиотека запросов из рилсов, гайды.
+- `site/` — черновик сайта в репозитории. Боевая витрина — Тильда, не GitHub Pages.
 - `tg/queue/` — очередь постов канала [@about_ai_easy](https://t.me/about_ai_easy); правила — `tg/RULES.md`.
-- `tools/tg_publish.py` — публикатор (Bot API, только стандартная библиотека). Запускается `.github/workflows/tg.yml` каждые 10 минут.
+- `tools/tg_publish.py` — публикатор (Bot API, только стандартная библиотека). Каждые 10 минут его запускает cron на Almaty, не GitHub Actions.
 
-Секрет `TG_BOT_TOKEN` хранится только в GitHub Secrets.
+Токен бота только на сервере, в репозиторий не класть. Состояние канала — `CONTEXT.md` в проекте, раздел «Telegram».
