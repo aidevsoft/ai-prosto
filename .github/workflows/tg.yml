@@ -1,0 +1,30 @@
+name: tg-publish
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tg-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Publish due posts
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT: ${{ vars.TG_CHAT || '@about_ai_easy' }}
+        run: python tools/tg_publish.py
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "ai-prosto-bot"
+          git config user.email "ai-prosto-bot@users.noreply.github.com"
+          git add tg/posted.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "tg: posted" && git pull --rebase && git push)
