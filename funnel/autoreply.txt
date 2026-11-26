@@ -1,7 +1,12 @@
-Привет! Это «ИИ — просто» 👋
+Привет! Это AI Prosto 👋
 
-Все запросы из рилсов целиком: https://aidevsoft.github.io/ai-prosto/prompts.html?utm_source=instagram&utm_medium=dm&utm_campaign=ai_prosto
-Бесплатная шпаргалка «11 запросов для быта»: https://aidevsoft.github.io/ai-prosto/free/11-zaprosov.html?utm_source=instagram&utm_medium=dm&utm_campaign=ai_prosto
-Подробности к каждому ролику — в Telegram: https://t.me/about_ai_easy
+Бесплатная шпаргалка «11 запросов для быта»:
+https://t.me/about_ai_easy/3
 
-Напиши вопрос — ответим здесь.
+Канал с полными запросами к каждому рилсу:
+https://t.me/about_ai_easy
+
+Сайт (библиотека запросов):
+https://aidevsoft.github.io/ai-prosto/?utm_source=instagram&utm_medium=dm&utm_campaign=ai_prosto&utm_content=autoreply
+
+Напиши, с какой задачей нужна помощь — подскажем запрос.
